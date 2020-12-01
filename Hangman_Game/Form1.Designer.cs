@@ -76,9 +76,10 @@
             // lblVictory
             // 
             this.lblVictory.AutoSize = true;
+            this.lblVictory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVictory.Location = new System.Drawing.Point(50, 349);
             this.lblVictory.Name = "lblVictory";
-            this.lblVictory.Size = new System.Drawing.Size(104, 24);
+            this.lblVictory.Size = new System.Drawing.Size(158, 36);
             this.lblVictory.TabIndex = 3;
             this.lblVictory.Text = "You won !";
             // 
@@ -97,7 +98,7 @@
             // btnReplay
             // 
             this.btnReplay.Image = ((System.Drawing.Image)(resources.GetObject("btnReplay.Image")));
-            this.btnReplay.Location = new System.Drawing.Point(237, 331);
+            this.btnReplay.Location = new System.Drawing.Point(282, 326);
             this.btnReplay.Name = "btnReplay";
             this.btnReplay.Size = new System.Drawing.Size(96, 91);
             this.btnReplay.TabIndex = 5;

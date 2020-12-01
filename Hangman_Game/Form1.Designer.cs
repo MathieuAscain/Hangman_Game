@@ -30,23 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hangman));
             this.search = new System.Windows.Forms.GroupBox();
-            this.txtWord = new System.Windows.Forms.TextBox();
+            this.EntryMessage = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.grpTestLetters = new System.Windows.Forms.GroupBox();
-            this.comboLetters = new System.Windows.Forms.ComboBox();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.lblLetters = new System.Windows.Forms.Label();
             this.lblVictory = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.btnReplay = new System.Windows.Forms.Button();
+            this.MyLetters = new System.Windows.Forms.GroupBox();
             this.search.SuspendLayout();
-            this.grpTestLetters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // search
             // 
-            this.search.Controls.Add(this.txtWord);
+            this.search.Controls.Add(this.EntryMessage);
             this.search.Controls.Add(this.label1);
             this.search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.Location = new System.Drawing.Point(38, 22);
@@ -58,15 +54,15 @@
             this.search.TabStop = false;
             this.search.Text = "Search for a word";
             // 
-            // txtWord
+            // EntryMessage
             // 
-            this.txtWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWord.Location = new System.Drawing.Point(27, 43);
-            this.txtWord.Margin = new System.Windows.Forms.Padding(4);
-            this.txtWord.Name = "txtWord";
-            this.txtWord.Size = new System.Drawing.Size(277, 45);
-            this.txtWord.TabIndex = 1;
-            this.txtWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWord_KeyPress);
+            this.EntryMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EntryMessage.Location = new System.Drawing.Point(27, 43);
+            this.EntryMessage.Margin = new System.Windows.Forms.Padding(4);
+            this.EntryMessage.Name = "EntryMessage";
+            this.EntryMessage.Size = new System.Drawing.Size(277, 45);
+            this.EntryMessage.TabIndex = 1;
+            this.EntryMessage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EntryMessage_KeyPress);
             // 
             // label1
             // 
@@ -76,45 +72,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 0;
-            // 
-            // grpTestLetters
-            // 
-            this.grpTestLetters.Controls.Add(this.comboLetters);
-            this.grpTestLetters.Controls.Add(this.btnTest);
-            this.grpTestLetters.Location = new System.Drawing.Point(42, 141);
-            this.grpTestLetters.Name = "grpTestLetters";
-            this.grpTestLetters.Size = new System.Drawing.Size(340, 121);
-            this.grpTestLetters.TabIndex = 1;
-            this.grpTestLetters.TabStop = false;
-            this.grpTestLetters.Text = "Letters tested";
-            // 
-            // comboLetters
-            // 
-            this.comboLetters.FormattingEnabled = true;
-            this.comboLetters.Location = new System.Drawing.Point(67, 51);
-            this.comboLetters.Name = "comboLetters";
-            this.comboLetters.Size = new System.Drawing.Size(84, 30);
-            this.comboLetters.TabIndex = 1;
-            this.comboLetters.SelectedIndexChanged += new System.EventHandler(this.comboLetters_SelectedIndexChanged);
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(176, 43);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(77, 45);
-            this.btnTest.TabIndex = 0;
-            this.btnTest.Text = "TEST";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // lblLetters
-            // 
-            this.lblLetters.AutoSize = true;
-            this.lblLetters.Location = new System.Drawing.Point(34, 292);
-            this.lblLetters.Name = "lblLetters";
-            this.lblLetters.Size = new System.Drawing.Size(366, 24);
-            this.lblLetters.TabIndex = 2;
-            this.lblLetters.Text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             // 
             // lblVictory
             // 
@@ -147,16 +104,24 @@
             this.btnReplay.UseVisualStyleBackColor = true;
             this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
             // 
+            // MyLetters
+            // 
+            this.MyLetters.Location = new System.Drawing.Point(38, 141);
+            this.MyLetters.Name = "MyLetters";
+            this.MyLetters.Size = new System.Drawing.Size(340, 162);
+            this.MyLetters.TabIndex = 6;
+            this.MyLetters.TabStop = false;
+            this.MyLetters.Text = "Letters selection";
+            // 
             // Hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 452);
+            this.Controls.Add(this.MyLetters);
             this.Controls.Add(this.btnReplay);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.lblVictory);
-            this.Controls.Add(this.lblLetters);
-            this.Controls.Add(this.grpTestLetters);
             this.Controls.Add(this.search);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -165,7 +130,6 @@
             this.Load += new System.EventHandler(this.Hangman_Load);
             this.search.ResumeLayout(false);
             this.search.PerformLayout();
-            this.grpTestLetters.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,14 +140,11 @@
 
         private System.Windows.Forms.GroupBox search;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtWord;
-        private System.Windows.Forms.GroupBox grpTestLetters;
-        private System.Windows.Forms.ComboBox comboLetters;
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Label lblLetters;
+        private System.Windows.Forms.TextBox EntryMessage;
         private System.Windows.Forms.Label lblVictory;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button btnReplay;
+        private System.Windows.Forms.GroupBox MyLetters;
     }
 }
 
